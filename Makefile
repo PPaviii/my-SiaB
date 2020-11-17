@@ -142,7 +142,7 @@ $(M)/kubeadm: | $(M)/setup /usr/bin/kubeadm
 	sudo cp -f /etc/kubernetes/admin.conf $(HOME)/.kube/config
 	sudo chown $(shell id -u):$(shell id -g) $(HOME)/.kube/config
 	kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/rbac-kdd.yaml
-	kubectl apply -f /home/tilab/cord/automation-tools/seba-in-a-box/calico.yaml
+	kubectl apply -f calico.yaml
 	kubectl taint nodes --all node-role.kubernetes.io/master-
 	touch $@
 
